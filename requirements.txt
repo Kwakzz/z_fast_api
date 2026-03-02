@@ -8,13 +8,19 @@ pydantic
 # LOGGING
 loguru
 
+# ENV VARS
+python-dotenv
+
 # TESTING
 pytest
 pytest-asyncio
 
 # DATABASE
 sqlmodel
+SQLAlchemy
 alembic
 asyncpg
-psycopg2-binary
-postgres
+
+# SECURITY
+PyJWT
+bcrypt
