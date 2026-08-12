@@ -4,6 +4,9 @@ from datetime import datetime
 
 
 class User(SQLModel, table=True):   
+    
+    __tablename__ = "users"
+    
     id: UUID = Field(default_factory=uuid4, primary_key=True)
     email: str = Field(unique=True)
     password: str | None = Field(default=None, nullable=True)
@@ -14,6 +17,9 @@ class User(SQLModel, table=True):
     
     
 class Zweet(SQLModel, table=True):
+    
+    __tablename__ = "zweets"
+    
     id: UUID = Field(default_factory=uuid4, primary_key=True)
     content: str = Field()
     posted_at: datetime = Field(default_factory=datetime.now)

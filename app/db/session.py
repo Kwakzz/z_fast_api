@@ -1,3 +1,4 @@
+from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy.orm import sessionmaker
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -7,7 +8,8 @@ import os
 load_dotenv()
 
 async_engine = create_async_engine(
-    url=os.environ("DB_CONNECTION_URI")
+    url=os.environ("DB_CONNECTION_URI"),
+    poolclass=pool.AsyncAdaptedQueuePool
 )
 
 
